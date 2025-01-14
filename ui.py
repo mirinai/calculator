@@ -1,14 +1,20 @@
 # ch 5.2.1 ui.py
-from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,QMessageBox, QPlainTextEdit, QHBoxLayout)
+from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QVBoxLayout,QMessageBox, QPlainTextEdit, QHBoxLayout, QLabel) 
+#QLabel 추가
 from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import QDate, Qt #날짜와 주요 속성값을 쓰기 위해 추가
+
 
 class View(QWidget):
     
     def __init__(self):
         super().__init__()
+        self.date = QDate.currentDate() #현재 날짜를 저장하기 위해 추가
         self.initUI()
     
     def initUI(self):
+        self.lbl1 = QLabel(self.date.toString(Qt.DefaultLocaleLongDate), self) # 추가
+
         self.te1 = QPlainTextEdit() #텍스트 에디트 위젯 생성
         self.te1.setReadOnly(True)
 
@@ -23,7 +29,7 @@ class View(QWidget):
         vbox = QVBoxLayout() #수직 레이아웃 위젯 생성
         vbox.addWidget(self.te1) # 수직 레이아웃에 텍스트 에디트 추가
         vbox.addLayout(hbox) #btn1 위치에 hbox 배치
-        vbox.addStretch(1) #빈공간
+        vbox.addWidget(self.lbl1) # 고침
 
         self.setLayout(vbox) #빈 공간 - 버튼 - 빈공간 순으로 배치된 레이아웃 설정
         self.setWindowTitle('Calculator')
