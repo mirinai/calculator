@@ -60,11 +60,8 @@ class View(QWidget):
         self.resize(256,256)
         self.show()
 
-<<<<<<< HEAD
-    def activateMessage(self,text): #버튼을 클릭할 때 동작하는 함수 : 메시지 박스 출력
-=======
+
     def setDisplay(self): #버튼을 클릭할 때 동작하는 함수 : 메시지 박스 출력, 메서드 이름 바꾸기
->>>>>>> f9a894979751ab2d228d4c0b6105d5c953f4eb08
         #핸들러함수 수정 : 메시지가 텍스트 에디트에 출력되도록
         # QMessageBox.information(self,"information","Button clicked!")
         self.te1.appendPlainText(text)
