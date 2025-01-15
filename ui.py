@@ -22,11 +22,13 @@ class View(QWidget):
         self.te1 = QPlainTextEdit() #텍스트 에디트 위젯 생성
         self.te1.setReadOnly(True)
 
-        self.btn1 = QPushButton('Message',self)
+        self.btn1 = QPushButton('Calc',self) # 버튼 이름 바꾸기
         self.btn2 = QPushButton('Clear',self)
 
         self.le1 = QLineEdit('0', self) # 라인 에디트1 추가
         self.le1.setAlignment(QtCore.Qt.AlignRight) ## 라인 에디트1 문자열 배치 설정
+        self.le1.setFocus(True) # 포커스 설정
+        self.le1.selectAll() # 텍스트 전체 선택
 
         self.le2 = QLineEdit('0', self) # 라인 에디트2 추가
         self.le2.setAlignment(QtCore.Qt.AlignRight) ## 라인 에디트2 문자열 배치 설정
@@ -58,7 +60,7 @@ class View(QWidget):
         self.resize(256,256)
         self.show()
 
-    def activateMessage(self): #버튼을 클릭할 때 동작하는 함수 : 메시지 박스 출력
+    def setDisplay(self): #버튼을 클릭할 때 동작하는 함수 : 메시지 박스 출력, 메서드 이름 바꾸기
         #핸들러함수 수정 : 메시지가 텍스트 에디트에 출력되도록
         # QMessageBox.information(self,"information","Button clicked!")
         self.te1.appendPlainText("Button clicked!")
