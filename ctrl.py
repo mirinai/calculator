@@ -29,7 +29,7 @@ class Control:
     def div(self, a, b): # exception 처리를 쓰도록 고침
         try:
             if(b == 0):
-                return Exception("Divisor Error")
+                raise Exception("Divisor Error")
            
         except Exception as e:
             return e
