@@ -35,7 +35,10 @@ class Control:
             return e
         
         return a/b
-    def pow(self, a, b): # 제곱연산 함수 추가
-        return pow(a, b)
+    def pow(self, a, b): # 제곱함수 고침
+        if(a == 0):
+            return 0
+        else:
+            return pow(a, b)
     
     
