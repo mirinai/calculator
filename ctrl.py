@@ -35,10 +35,14 @@ class Control:
             return e
         
         return a/b
-    def pow(self, a, b): # 제곱함수 고침
-        if(a == 0):
-            return 0
-        else:
-            return pow(a, b)
+    def pow(self, a, b): # exception처리를 쓰도록 고침
+        try:
+            if(a == 0):
+                raise Exception("Base Error")
+        except Exception as e:
+            return e
+        return pow(a, b)
+    
+            
     
     
