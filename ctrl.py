@@ -22,5 +22,13 @@ class Control:
     
     def sum(self, a, b): # 덧셈 함수 추가
         return str(a+b)
-        
+    def sub(self, a, b): # 뺄셈 함수 추가
+        return a - b
+    def mul(self, a, b): # 곱셈 함수 추가
+        return a*b
+    def div(self, a, b): # 나눗셈 함수 추가
+        return a/b
+    def pow(self, a, b): # 제곱연산 함수 추가
+        return pow(a, b)
+    
     

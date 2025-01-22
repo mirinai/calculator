@@ -6,7 +6,6 @@ from PyQt5.QtGui import QIcon
 
 from PyQt5 import QtCore # 모듈 추가
 
-
 class View(QWidget):
     
     def __init__(self):
